@@ -115,7 +115,7 @@ class AlumniController {
 
     if (alumni) {
         const data = {
-            message: `Melihat data alumnis id ${id}`,
+            message: `Melihat data alumni id ${id}`,
             data: alumni,
         };
         res.status(200).json(data);
