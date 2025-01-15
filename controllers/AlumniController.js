@@ -67,7 +67,7 @@ class AlumniController {
 
   // buat fungsi untuk mengubah data
   async update(req, res) {
-    const {id} = req.param;
+    const {id} = req.params;
 
     // Mencari id alumni yang di update
     const alumni = await Alumni.find(id);
