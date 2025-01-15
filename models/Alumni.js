@@ -77,7 +77,7 @@ class Alumni {
   static async search(name) {
     return new Promise((resolve, reject) => {
       // Query MySQL untuk mencari name
-      const query = "SELECT * FROM alumni WHERE nama LIKE ?";
+      const query = "SELECT * FROM alumni WHERE name LIKE ?";
       const searchValue = `%${name}%`;
       db.query(query, [searchValue], (err, results) => {
           resolve(results);
