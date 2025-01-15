@@ -86,11 +86,11 @@ class Alumni {
   }
 
   // buat fungsi static findByStatus
-  static async findByStatus() {
+  static async findByStatus(status) {
     return new Promise((resolve, reject) => {
       // Query MySQL untuk mencari status
       const query = "SELECT * FROM alumni WHERE status = ?";
-      db.query(query, (err, results) => {
+      db.query(query,[status], (err, results) => {
           resolve(results);
       });
     });
