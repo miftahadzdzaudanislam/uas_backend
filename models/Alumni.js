@@ -88,10 +88,9 @@ class Alumni {
   // buat fungsi static findByStatus
   static async findByStatus() {
     return new Promise((resolve, reject) => {
-      // Query MySQL untuk mencari name
-      const query = "SELECT * FROM students WHERE status = 'freshGraduation'";
+      // Query MySQL untuk mencari status
+      const query = "SELECT * FROM students WHERE status = ?";
       db.query(query, (err, results) => {
-          // const [student] = results;
           resolve(results);
       });
     });

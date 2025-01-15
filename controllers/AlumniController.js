@@ -144,7 +144,7 @@ class AlumniController {
 
   // buat fungsi untuk mencari data status fresh Graduate
   async freshGraduate(req, res) {
-    const alumni = await Alumni.jurusan();
+    const alumni = await Alumni.findByStatus("freshGraduate");
     
     if (alumni && alumni.length > 0) {
         res.status(200).json({
@@ -158,7 +158,7 @@ class AlumniController {
 
   // buat fungsi untuk mencari data status employed
   async employed(req, res) {
-    const alumni = await Alumni.jurusan();
+    const alumni = await Alumni.findByStatus("employed");
     
     if (alumni && alumni.length > 0) {
         res.status(200).json({
@@ -172,7 +172,7 @@ class AlumniController {
 
   // buat fungsi untuk mencari data status unemployed
   async unemployed(req, res) {
-    const alumni = await Alumni.jurusan();
+    const alumni = await Alumni.findByStatus("unemployed");
     
     if (alumni && alumni.length > 0) {
         res.status(200).json({
